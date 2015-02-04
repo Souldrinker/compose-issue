@@ -16,6 +16,8 @@ System.register([], function (_export) {
           this.heading = "Welcome to the Aurelia Navigation App!";
           this.firstName = "John";
           this.lastName = "Doe";
+          this.id = 0;
+          this.viewName = null;
           this.stuffHolder = new Array();
           this.stuff = null;
         }
