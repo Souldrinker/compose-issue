@@ -23,6 +23,22 @@ export class Welcome{
     this.stuff = {id: '1', viewName: 'test-view'};
     this.stuffHolder = new Array(this.stuff);
   }
+
+  showWithId(id){
+    this.id = id;
+    this.viewName = 'test-view';
+  }
+
+  showTestView2(){
+    this.id = 3;
+    this.viewName = 'test-view2';
+  }
+
+  showAnotherTest(){
+    this.id = 4;
+    this.viewName = 'test-view2';
+    this.viewName = 'test-view';
+  }
 }
 
 export class UpperValueConverter {

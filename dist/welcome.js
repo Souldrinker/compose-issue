@@ -45,6 +45,31 @@ System.register([], function (_export) {
             },
             writable: true,
             configurable: true
+          },
+          showWithId: {
+            value: function showWithId(id) {
+              this.id = id;
+              this.viewName = "test-view";
+            },
+            writable: true,
+            configurable: true
+          },
+          showTestView2: {
+            value: function showTestView2() {
+              this.id = 3;
+              this.viewName = "test-view2";
+            },
+            writable: true,
+            configurable: true
+          },
+          showAnotherTest: {
+            value: function showAnotherTest() {
+              this.id = 4;
+              this.viewName = "test-view2";
+              this.viewName = "test-view";
+            },
+            writable: true,
+            configurable: true
           }
         });
 
