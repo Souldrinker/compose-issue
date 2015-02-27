@@ -2,7 +2,7 @@
 I've previously used this slightly modified version of the skeleton-navigation app to explain an issue I previously had relating to templating-resources that is now fixed, but I've run into a new issue so I've modified it a bit again in hopes of either getting the new issue fixed or get an explanation of why it's not working as I thought.
 
 ##The new issue
-In my "real" app ported from Durandal I have a compose binding where I pass in an id to the activate method of a dashboard view depending on what "tab" i press in the main view and thus change the appearance and contents of the dashboard.
+In my "real" app ported from Durandal I have a compose binding where I pass in an id to the activate method of a dashboard view depending on what "tab" I press in the main view and thus change the appearance and contents of the dashboard.
 
 I have tried to make a simple reproduction of the issue here.
 
@@ -25,7 +25,7 @@ That is if I press button 1, 2 or 4 without hitting button 3 in between the view
 Is this a bug or by design? If it's by design is there another way to "re-activate" or notify the composed view so it can change it's appearance based on the new id? Preferably through the compose binding without having to involve sending events through the event-aggregator which I suppose I will have to do as a plan B.
 
 
-###Below is the old text that I wrote to explain issue #1 in the templating-resources that was fixed in version 0.8.6.
+###Below is the old text that I wrote to explain issue #10 in the templating-resources that was fixed in version 0.8.6.
 https://github.com/aurelia/templating-resources/issues/10
 
 # compose-issue
