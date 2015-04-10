@@ -1,65 +1,44 @@
 # compose-issue
-I've previously used this slightly modified version of the skeleton-navigation app to explain an issue I previously had relating to templating-resources that is now fixed, but I've run into a new issue so I've modified it a bit again in hopes of either getting the new issue fixed or get an explanation of why it's not working as I thought.
+I've previously used this slightly modified version of the skeleton-navigation app to report now fixed bugs to compose bindings, thus the project name. 
+
+It's now rebased upon the 0.12 version of the skeleton app to show a new issue that showed up after upgrading to the latest Aurelia version released 2015-04-09 that don't exist in earlier versions.
 
 ##The new issue
-In my "real" app ported from Durandal I have a compose binding where I pass in an id to the activate method of a dashboard view depending on what "tab" I press in the main view and thus change the appearance and contents of the dashboard.
+In some places in my "real" app I use the RubaXa/Sortable library to be able to grab on to and reorder various parts in the application.
 
-I have tried to make a simple reproduction of the issue here.
+This has worked quite well up until the April 9th release of Aurelia where it started to show strange behaviors, namely it creates copies of the things I drag/drop.
 
-For this I have added a new compose binding at the bottom of the welcome.html and four buttons:
+The things I've added here after grabbing a copy of the latest skeleton app is:
 
-1. "Show with id=1" which sets the model to 1 and the view-model to "test-view".
+###welcome.html
+At the end of the file I've added a div with id "sortableDiv" with contains another div with a repeat.for on a list of strings that it shows in spans inside.
 
-2. "Show with id=2" which sets the model to 2 and the view-model to "test-view".
+###welcome.js
+Here I import the RubaXa/Sortable, create an string array (sortableTexts), call a method in the attached method to setup the sortable and calls reorder onUpdate.
 
-3. "Show TestView2" which sets the model to 3 and the view-model to "test-view2".
+In the reorder function I do pretty much what I do in my real app, that is reorder the underlying array based on the drag/drop operation so it is in sync with the UI so I then can pass it down to the server to store the new sort order.
 
-4. "Another test" which sets the model to 4 and the view-model first to "test-view2" and then immediately back to "test-view".
+###Summary
+In this version based on the latest Aurelia the list of strings looks ok initially:
 
-Here I had assumed it would work as in Durandal which means that the activate method of the test-view gets called with the correct id no matter what button I press, but this is unfortunately not the case here.
+Text1<br />
+Text2
 
-In Aurelia the activate method of the test-view doesn't seem to get called unless I change the value of the view-model to another value.
+But when I try to drag Text1 below Text2 I end up with:
 
-That is if I press button 1, 2 or 4 without hitting button 3 in between the view doesn't update.
+Text2<br />
+Text1<br />
+Text1
 
-Is this a bug or by design? If it's by design is there another way to "re-activate" or notify the composed view so it can change it's appearance based on the new id? Preferably through the compose binding without having to involve sending events through the event-aggregator which I suppose I will have to do as a plan B.
+That is Text1 gets duplicated in the UI (but not in the underlying array).
 
+Then if I try to drag Text2 to the bottom I end up with:
 
-###Below is the old text that I wrote to explain issue #10 in the templating-resources that was fixed in version 0.8.6.
-https://github.com/aurelia/templating-resources/issues/10
+Text1<br />
+Text1<br />
+Text2<br />
+Text2
 
-# compose-issue
+Before the upgrade to the latest Aurelia (and also if I try with the 0.11 skeleton) I only have the initial two texts showing up.
 
-A copy of the aurelia-skeleton-navigation-0.9.4 project where I added some compose bindings that I was hoping should work as in Durandal.
-
-It might not be a bug in Aurelia, but me misunderstanding the concepts, if so bear with me.
-
-I suspect it may even be working as intended here and just me needing to re-learn from being used to the Durandal observable plugin (knockout).
-
-## stuff added
-
-### welcome.js
-
-In the constructor I added a "stuffHolder" variable that I initiate to a new empty Array and initiate the other variables to 0 or null.
-
-Then I added a showTestView function that gets triggered by button added in the HTML.
-
-In that function I set up the id/viewName in three different ways like this:
-
-1. Add id and viewName properties directly to the view model
-
-2. Add a "stuff" object consisting of id and viewName
-
-3. Add the "stuff" object to the stuffHolder array.
-
-### welcome.html
-
-At the end here I added a button to be triggered after the constructor to simulate getting a value back from a Web Api call after the constructor/activate.
-
-The button triggers the showTestView function mentioned above.
-
-I've also added several compose bindings to the welcome.html that all loads a TestView (that just outputs the value passed in to the activate method).
-
-
-According to my previous Durandal experience I would have thought that all five bindings would have passed in the id to the activate method, but here only the one contained in pre-defined array does.
-
+Is this a new bug in the binding? Is it a bug in the Sortable library (that seemingly worked fine earlier)? Or is my code buggy?

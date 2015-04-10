@@ -1,3 +1,76 @@
+## 0.12.0 (2015-04-09)
+
+
+#### Bug Fixes
+
+* **readme:** More info about E2E workflow ([f9b360ee](http://github.com/aurelia/skeleton-navigation/commit/f9b360ee3211b896b5b9970520bcd37dc79c2918))
+* **test:** workaround for issue with jspm karma plugin ([7bf90b7e](http://github.com/aurelia/skeleton-navigation/commit/7bf90b7ef78b4375760e94c394a8f2ec0870e43e))
+* **tests:** Update routes in unit tests ([fb2c02b6](http://github.com/aurelia/skeleton-navigation/commit/fb2c02b6e3dd5ba219b307bedd5be9b999c21116))
+
+
+#### Features
+
+* **all:** new decorators and behavior model implemented ([e5445795](http://github.com/aurelia/skeleton-navigation/commit/e54457951a17b3f29d47555a299f9aaa06e59349))
+
+
+## 0.11.0 (2015-03-25)
+
+
+#### Bug Fixes
+
+* **all:** update to latest framework versions ([86378200](http://github.com/aurelia/skeleton-navigation/commit/8637820009f7bf4f4b2a08b2abaf2fae9bb2811d))
+
+
+### 0.10.2 (2015-02-28)
+
+
+#### Bug Fixes
+
+* **package:** update dependencies ([3a8cfc33](http://github.com/aurelia/skeleton-navigation/commit/3a8cfc33cb41e29d4199a94b43198cf62a3a1ceb))
+
+
+### 0.10.1 (2015-02-28)
+
+
+#### Bug Fixes
+
+* **child-router:** correct class name ([93f9bfc9](http://github.com/aurelia/skeleton-navigation/commit/93f9bfc9076a7e950d667d50c9ac75e9efb3e1f5))
+* **e2e:**
+  * remove iit in dist ([dd644b1f](http://github.com/aurelia/skeleton-navigation/commit/dd644b1f926fca5c0a59cf1a662fb246456aa9ae))
+  * remove iit ([340fc90d](http://github.com/aurelia/skeleton-navigation/commit/340fc90d3a558e6a5f1aed83f7d2c1080447bc33))
+* **package:** update dependencies ([42b6ebbd](http://github.com/aurelia/skeleton-navigation/commit/42b6ebbd571f61d82ef7334b518dba4259559f2a))
+
+
+#### Features
+
+* **e2e:** add protractor plugin, add waitMethods ([d24c5a0d](http://github.com/aurelia/skeleton-navigation/commit/d24c5a0d606c6da1c30cf54a56ca5d3e086749cb))
+
+
+## 0.10.0 (2015-02-12)
+
+
+#### Bug Fixes
+
+* **index:** properly load bootstrap ([c1735fdb](http://github.com/aurelia/skeleton-navigation/commit/c1735fdbd064e69567b90358dfcc5eff0fdeab37))
+
+
+### 0.9.5 (2015-02-06)
+
+
+#### Bug Fixes
+
+* **build:**
+  * include root attribute on path for source maps ([e3fc2d5a](http://github.com/aurelia/skeleton-navigation/commit/e3fc2d5a26f354c2afbd2c1e1e45b96fe5d92657), closes [#26](http://github.com/aurelia/skeleton-navigation/issues/26))
+  * add source maps; remove sourceFileName from compiler options ([1733c4ad](http://github.com/aurelia/skeleton-navigation/commit/1733c4ad032747ecb868b420a5d6f23e9dab12ae))
+* **package:** update dependencies ([025154f3](http://github.com/aurelia/skeleton-navigation/commit/025154f3c9fc9d99b6ca00bfd94d9ffc8249df5c))
+* **test:** removing single it execution ([31866dc3](http://github.com/aurelia/skeleton-navigation/commit/31866dc3038fe2c1b51531620a13b88c8e3ff766))
+
+
+#### Features
+
+* **e2e:** add protractor locator and e2e PO test ([2509836e](http://github.com/aurelia/skeleton-navigation/commit/2509836e8406745e55c8d3d897f8a2b7f1bb1c56))
+
+
 ### 0.9.4 (2015-02-03)
 
 

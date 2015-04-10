@@ -18,22 +18,9 @@
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
   </section>
-  <button click.delegate="showTestView()">Show composed view</button>
-  <ul>
-    <li><compose model.bind="id" view-model.bind="viewName"></compose></li>
-    <li><compose model.bind="stuff.id" view-model.bind="stuff.viewName"></compose></li>
-    <li>
-      <div repeat.for="stuff of stuffHolder">
-        <compose model.bind="stuff.id" view-model.bind="stuff.viewName"></compose>
-      </div>
-    </li>
-    <li><compose model="1" view-model.bind="stuff.viewName"></compose></li>
-    <li><compose model="1" view-model.bind="viewName"></compose></li>
-  </ul>
-  <button click.delegate="showWithId(1)">Show with id = 1</button>
-  <button click.delegate="showWithId(2)">Show with id = 2</button>
-  <button click.delegate="showTestView2()">Show TestView2</button>
-  <button click.delegate="showAnotherTest()">Another test</button>
-  <br>
-  <compose model.bind="id" view-model.bind="viewName"></compose>
+    <div id="sortableDiv" >
+	<div repeat.for="text of sortableTexts">
+		<span>${text}</span>
+	</div>
+  </div>
 </template>
